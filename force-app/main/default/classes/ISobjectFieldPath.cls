@@ -1,7 +1,7 @@
 /**
  * @author Andrei Kakhanouski <akohan91@gmail.com>
  */
-public interface SobjectFieldPathInterface {
+public interface ISobjectFieldPath {
 	/**
 	 * @description Returns field path. Example: Account.Name
 	 * @return   { String }

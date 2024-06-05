@@ -42,17 +42,17 @@ public with sharing class TestSobjectFieldPath {
 	@IsTest
 	static void testTargetReferencePath(){
 		Test.startTest();
-		SobjectFieldPathInterface noReferenceInstance = new SobjectFieldPath('Contact', 'Account.Name');
+		ISobjectFieldPath noReferenceInstance = new SobjectFieldPath('Contact', 'Account.Name');
 		System.assertEquals(
 			'account.id', noReferenceInstance.targetReferencePath(),
 			'The targetReferencePath() method return wrong value.'
 		);
-		SobjectFieldPathInterface referenceInstance = new SobjectFieldPath('Contact', 'AccountId');
+		ISobjectFieldPath referenceInstance = new SobjectFieldPath('Contact', 'AccountId');
 		System.assertEquals(
 			'account.id', referenceInstance.targetReferencePath(),
 			'The targetReferencePath() method return wrong value.'
 		);
-		SobjectFieldPathInterface idInstance = new SobjectFieldPath('Contact', 'Account.Id');
+		ISobjectFieldPath idInstance = new SobjectFieldPath('Contact', 'Account.Id');
 		System.assertEquals(
 			'account.id', idInstance.targetReferencePath(),
 			'The targetReferencePath() method return wrong value.'
@@ -63,7 +63,7 @@ public with sharing class TestSobjectFieldPath {
 	@IsTest
 	static void testTargetFieldDescribe(){
 		Test.startTest();
-		SobjectFieldPathInterface instance = new SobjectFieldPath('Contact', 'Account.Name');
+		ISobjectFieldPath instance = new SobjectFieldPath('Contact', 'Account.Name');
 		System.assertEquals(
 			'Name', instance.targetFieldDescribe().getName(),
 			'The targetFieldDescribe() method return wrong value.'
@@ -76,7 +76,7 @@ public with sharing class TestSobjectFieldPath {
 		Test.startTest();
 		Integer errorCount = 0;
 		try {
-			SobjectFieldPathInterface instance = new SobjectFieldPath('Contact', 'WrongField');
+			ISobjectFieldPath instance = new SobjectFieldPath('Contact', 'WrongField');
 			instance.targetFieldDescribe();
 		} catch (Exception exc) {
 			errorCount++;
@@ -96,7 +96,7 @@ public with sharing class TestSobjectFieldPath {
 		errorCount = 0;
 
 		try {
-			SobjectFieldPathInterface instance = new SobjectFieldPath('Contact', 'WrongField.Name');
+			ISobjectFieldPath instance = new SobjectFieldPath('Contact', 'WrongField.Name');
 			instance.targetFieldDescribe();
 		} catch (Exception exc) {
 			errorCount++;

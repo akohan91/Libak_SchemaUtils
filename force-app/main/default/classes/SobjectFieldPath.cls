@@ -3,7 +3,7 @@
  * Represent field path of sobject.
  * Example: For Contact sobject: Account.Name
  */
-public with sharing class SobjectFieldPath implements SobjectFieldPathInterface {
+public with sharing class SobjectFieldPath implements ISobjectFieldPath {
 	public static Map<String,Schema.SObjectType> globalDescribe = Schema.getGlobalDescribe();
 	@TestVisible
 	private SObjectType sObjectType;
