@@ -1,3 +1,5 @@
+![LibAK logo](assets/small_logo.png)
+
 # Table of content
 
 - [Table of content](#table-of-content)
